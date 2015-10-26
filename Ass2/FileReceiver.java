@@ -113,6 +113,9 @@ public class FileReceiver {
 						System.out.println("Finish transmitting the file: " + accumulatedDataSize);
 						try {
 							bos.close();
+							for (int i = 0; i < 5; i++) {
+								sendAck(-1);
+							}
 						} catch (IOException e) {
 							System.out.println("Failed to close BufferedOutputStream");
 						}

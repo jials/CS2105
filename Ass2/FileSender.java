@@ -176,7 +176,7 @@ public class FileSender {
 						log.fine("ack packet " + seqNum + " is corrupted!");
 						continue;
 					} else {
-						if (ackSeqNum == seqNum) {
+						if (ackSeqNum == seqNum || ackSeqNum == -1) {
 							isAck = true;
 							log.fine("ACK " + seqNum);
 						} 
